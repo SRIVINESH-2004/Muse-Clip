@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music Player</title>
+   <link rel="stylesheet" href="style.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            var videoLink = localStorage.getItem("selectedVideo");
+            var songName = localStorage.getItem("selectedSong");
+            if (videoLink && songName) {
+                document.getElementById("videoPlayer").src = videoLink;
+                document.getElementById("songName").innerText = "Song Name : " + songName;
+            } else {
+                document.getElementById("videoPlayer").src = "default_video_url.mp4"; // Set default video URL if none selected
+                document.getElementById("songName").innerText = "No song selected.";
+            }
+        });
+    </script>
+</head>
+<body>
+    <nav class="Navigation">
+        <div class="Nav-bar">
+           <div class="Logo">
+          <a href="Home.html" class="home-text"> <h1><pre class="tab1">Muse Clip</pre></h1> </a> 
+            
+           </div>
+           <div class="dropdown">
+            <button class="dropbtn">
+              <i class='bx bxs-user'></i><i class='bx bx-log-out'></i>
+            </button>
+            <div class="dropdown-content">
+              <a href="index.html">LOGOUT <i class='bx bx-log-out'></i></a>
+            </div>
+          </div>
+          </div>
+    </nav>
+    <!-- NAVIGATION BAR WORK ENDS -->
+<br />
+<br />
+<br />
+<br />
+
+
+
+
+<!-- 
+SEARCH BAR WORK  -->
+<br />
+
+<h3 class="heading">Best Musics For You !</h3>
+<div name="song-details">
+    <br />
+    <br />
+    <h3  class="heading">Song Details :</h3>
+    <br /> 
+    <p id="songName" class="sname"></p>
+    <br /> 
+    <iframe id="videoPlayer" width="1000" height="500" frameborder="0" allowfullscreen class="vlink"></iframe>
+
+</body>
+</html>
